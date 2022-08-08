@@ -102,15 +102,15 @@ def never_positive(df):
     return df
 
 def hist_maker(df):
-	'''Returns histplots in a single fig for each column of a given DataFrame
+    '''Returns histplots in a single fig for each column of a given DataFrame
     
     Input: DataFrame
-    Output: Histplots of all the columns'''	
-	
+    Output: Histplots of all the columns'''
+    
     cols = list(df.columns)
     x = len(cols)
     fig, ax = plt.subplots(1,x, figsize=(20,10))
-    
+
     for col in cols:
         y = cols.index(col)
         sns.histplot(data=df, x=col, ax = ax[y])
@@ -119,7 +119,7 @@ def hist_maker(df):
     return
 
 def box_maker(df):
-	'''Returns boxplots in a single fig for each column of a given DataFrame
+    '''Returns boxplots in a single fig for each column of a given DataFrame
     
     Input: DataFrame
     Output: Boxplot of all the columns'''
