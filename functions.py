@@ -134,3 +134,20 @@ def box_maker(df):
         ax[y].set_title(col)
         
     return
+
+def kdeplot_maker(df):
+    '''Returns KDEplots in a single fig for each column of a given DataFrame
+    
+    Input: DataFrame
+    Output: KDEplots of all the columns'''
+	
+    cols = list(df.columns)
+    x = len(cols)
+    fig, ax = plt.subplots(1,x, figsize=(20,10))
+    
+    for col in cols:
+        y = cols.index(col)
+        sns.kdeplot(data=df, x=col, ax = ax[y])
+        ax[y].set_title(col)
+        
+    return
